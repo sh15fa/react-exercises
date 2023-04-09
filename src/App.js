@@ -1,10 +1,6 @@
-import React from 'react';
-
+import React, { Component } from 'react'
+import ExerciseComponent from './ExerciseComponent';
 // don't change the Component name "App"
 export default function App() {
-    return (
-        <div>
-            <h1>Exercise done!</h1>
-        </div>
-    );
+    return <ExerciseComponent />
 }
