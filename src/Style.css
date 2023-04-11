@@ -6,21 +6,16 @@ body {
     color: #959090;
 }
 
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
 
-.product {
-    margin: 1rem 0;
+input {
+    font: inherit;
     padding: 0.5rem;
-    background-color: #373535;
-    color: #e7e4e4;
-    border-radius: 8px;
-}
-
-.product h2,
-.product p {
-    margin: 0.5rem 0;
-}
-
-.price {
-    font-size: 0.75rem;
-    color: #bab6b6;
+    background-color: #474545;
+    border: none;
+    border-radius: 4px;
+    color: white;
 }

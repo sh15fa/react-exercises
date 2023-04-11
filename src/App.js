@@ -1,18 +1,21 @@
 import React,{useState} from 'react';
 
-import './styles.css';
+import './Style.css';
 
 // don't change the Component name "App"
-// important: In this code editor, use React.useState() instead of just useState()
 export default function App() {
-    const [count,setCount]=useState(100);
-    const clicked=()=>{
-        setCount(75);
-    }
+    const[enteredVal,setMsg]=useState("Invalid");
+    const showMsg=(event)=>{
+        
+            if(event.target.value.trim().length>=3){
+            setMsg("Valid");
+        }
+    };
     return (
-        <div>
-            <p>${count}</p>
-            <button onClick={clicked}>Apply Discount</button>
-        </div>
+        <form>
+        <label class="label">Your message</label>
+        <input type="text" class="input" onChange={showMsg}  />
+        <p>{enteredVal} message</p>
+    </form>
     );
 }
