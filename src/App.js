@@ -4,18 +4,16 @@ import './Style.css';
 
 // don't change the Component name "App"
 export default function App() {
-    const[enteredVal,setMsg]=useState("Invalid");
-    const showMsg=(event)=>{
-        
-            if(event.target.value.trim().length>=3){
-            setMsg("Valid");
-        }
+    const [counter,incCounter]=useState(0);
+    const Increment=()=>{
+        incCounter((prevCounter)=>{
+            return prevCounter+1;
+        })
     };
     return (
-        <form>
-        <label class="label">Your message</label>
-        <input type="text" class="input" onChange={showMsg}  />
-        <p>{enteredVal} message</p>
-    </form>
+      <div>
+        <p id="counter">{counter}</p>
+        <button onClick={Increment}t>Increment</button>
+      </div>
     );
 }
