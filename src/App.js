@@ -1,19 +1,19 @@
-import React,{useState} from 'react';
+import React from 'react';
 
+import Todo from './Todo';
 import './Style.css';
+
+const DUMMY_TODOS = [
+    'Learn React',
+    'Practice React',
+    'Profit!'
+];
 
 // don't change the Component name "App"
 export default function App() {
-    const [counter,incCounter]=useState(0);
-    const Increment=()=>{
-        incCounter((prevCounter)=>{
-            return prevCounter+1;
-        })
-    };
     return (
-      <div>
-        <p id="counter">{counter}</p>
-        <button onClick={Increment}t>Increment</button>
-      </div>
+        <ul>
+          {DUMMY_TODOS.map(e=><Todo text={e}/>)}
+        </ul>
     );
 }
