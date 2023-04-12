@@ -1,19 +1,27 @@
 import React,{useState} from 'react';
 
-import './Style.css';
-
 // don't change the Component name "App"
 export default function App() {
-    const [counter,incCounter]=useState(0);
-    const Increment=()=>{
-        incCounter((prevCounter)=>{
-            return prevCounter+1;
-        })
-    };
+    let [dialog,setDialog] = useState(false);
+    const showDialog = ()=>
+    {
+        setDialog(true);
+    }
+    
+    const disableDialog = ()=>
+    {
+        setDialog(false);
+    }
+    
+    
     return (
       <div>
-        <p id="counter">{counter}</p>
-        <button onClick={Increment}t>Increment</button>
-      </div>
+        {dialog ?<div id="alert">
+          <h2>Are you sure?</h2>
+          <p>These changes can't be reverted!</p>
+          <button onClick={disableDialog}>Proceed</button>
+        </div> :<p></p>}
+        <button onClick={showDialog}>Delete</button>
+      </div>    
     );
 }
