@@ -1,16 +1,15 @@
-import React from 'react';
-import './Style.css';
+import React, {useState} from 'react';
 
 // don't change the Component name "App"
 export default function App() {
-    const [isClicked,setIsClicked]=React.useState(false);
-    const clichHandler=()=>{
-        setIsClicked((prev)=>!prev);
+    const [isClicked,setIsClicked] = useState(false);
+    const clickHandler = ()=>{
+        setIsClicked(prev=>!prev)
     }
     return (
         <div>
-            <p style={{color: isClicked ? "red":"white"}}>Style me!</p>
-            <button onClick={clichHandler}>Toggle style</button>
+            <p className={`${isClicked?'active':''}`}>Style me!</p>
+            <button onClick={clickHandler}>Toggle style</button>
         </div>
     );
 }
