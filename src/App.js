@@ -1,27 +1,16 @@
-import React,{useState} from 'react';
+import React from 'react';
+import './Style.css';
 
 // don't change the Component name "App"
 export default function App() {
-    let [dialog,setDialog] = useState(false);
-    const showDialog = ()=>
-    {
-        setDialog(true);
+    const [isClicked,setIsClicked]=React.useState(false);
+    const clichHandler=()=>{
+        setIsClicked((prev)=>!prev);
     }
-    
-    const disableDialog = ()=>
-    {
-        setDialog(false);
-    }
-    
-    
     return (
-      <div>
-        {dialog ?<div id="alert">
-          <h2>Are you sure?</h2>
-          <p>These changes can't be reverted!</p>
-          <button onClick={disableDialog}>Proceed</button>
-        </div> :<p></p>}
-        <button onClick={showDialog}>Delete</button>
-      </div>    
+        <div>
+            <p style={{color: isClicked ? "red":"white"}}>Style me!</p>
+            <button onClick={clichHandler}>Toggle style</button>
+        </div>
     );
 }
